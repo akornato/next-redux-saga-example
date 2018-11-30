@@ -2,9 +2,9 @@
 
 Facebook GitHub repo viewer. The app has a sidebar navigation with repos sorted by stargazers. Clicking on one of them fetches that repo data and populates the main view with its details and a list of project contributors.
 
-## Continuous deploy
+## CI/CD
 
-- [Netlify](https://musing-joliot-fef599.netlify.com/) - exported as a static app.
+- [Netlify](https://musing-joliot-fef599.netlify.com/) - Jest/Enzyme tests + build + export into a static app.
 
 ## Musings
 
@@ -13,7 +13,7 @@ I tried to use the new [GitHub GraphQL API](https://developer.github.com/v4/) bu
 - [list-org-repos-ordered-by-stargazers-not-working](https://platform.github.community/t/list-org-repos-ordered-by-stargazers-not-working/7505): falling back to client side sorting for now.
 - [contributors-of-a-repository](https://platform.github.community/t/contributors-of-a-repository/3680/11): no other choice but to use [GitHub REST API](https://developer.github.com/v3/) to get repo contributors for now.
 
-Eventually I'm using GraphQL only to get the sidebar repo list so I can select only the few fields I need there. However GitHub imposes a limit of 100 repos with a single GraphQL query so I'm using a redux saga to get them all via paging.
+Eventually I'm using GraphQL only to get the sidebar repo list so I can select only the few fields I need there. However GitHub imposes a limit of 100 repos with a single GraphQL query so I'm using a little redux saga to get them all via paging.
 
 ## Built with
 
@@ -35,17 +35,21 @@ Eventually I'm using GraphQL only to get the sidebar repo list so I can select o
   npm run dev
 ```
 
-## Build application
+## Test
 
-To build the project:
+```bash
+  npm test
+```
+
+## Build
 
 ```bash
   npm run build
 ```
 
-## Export application
+## Export
 
-Export the project into a static app:
+Exports the project into a static app:
 
 ```bash
   npm run export

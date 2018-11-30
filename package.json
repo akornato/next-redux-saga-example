@@ -7,7 +7,7 @@
     "dev": "next",
     "test": "jest --coverage",
     "build": "next build",
-    "export": "npm run build && next export"
+    "export": "next export"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
