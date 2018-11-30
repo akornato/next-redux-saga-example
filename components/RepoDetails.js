@@ -21,7 +21,7 @@ const getTree = (obj, parent = '') => {
   );
 };
 
-class RepoDetails extends React.Component {
+export class RepoDetails extends React.Component {
   render() {
     const { details, loading, error } = this.props;
     if (loading) {
@@ -32,7 +32,7 @@ class RepoDetails extends React.Component {
       );
     }
     if (error) {
-      return error.message;
+      return <p>{error.message}</p>;
     }
     return details ? (
       <Fragment>

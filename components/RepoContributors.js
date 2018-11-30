@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { List, Avatar, Spin } from 'antd';
 
-class RepoContributors extends React.Component {
+export class RepoContributors extends React.Component {
   render() {
     const { contributors, loading, error } = this.props;
     if (loading) {
@@ -13,7 +13,7 @@ class RepoContributors extends React.Component {
       );
     }
     if (error) {
-      return error.message;
+      return <p>{error.message}</p>;
     }
     return contributors ? (
       <Fragment>

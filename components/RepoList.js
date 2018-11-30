@@ -11,7 +11,7 @@ const IconText = ({ type, text }) => (
   </div>
 );
 
-class RepoList extends React.Component {
+export class RepoList extends React.Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(fetchRepoListPage());
@@ -20,7 +20,7 @@ class RepoList extends React.Component {
   render() {
     const { list, loading, error, dispatch } = this.props;
     if (error) {
-      return JSON.stringify(error);
+      return <p>{error.message}</p>;
     }
     // repos have to be sorted client side for now because of a bug in graphql API:
     // https://platform.github.community/t/list-org-repos-ordered-by-stargazers-not-working/7505
@@ -61,6 +61,6 @@ class RepoList extends React.Component {
   }
 }
 
-const mapStateToProps = state => state.repoList;
+export const mapStateToProps = state => state.repoList;
 
 export default connect(mapStateToProps)(RepoList);
