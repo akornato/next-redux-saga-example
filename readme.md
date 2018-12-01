@@ -4,7 +4,7 @@ Facebook GitHub repo viewer. The app has a sidebar navigation with repos sorted 
 
 ## CI/CD
 
-- [musing-joliot-fef599.netlify.com](https://musing-joliot-fef599.netlify.com/) - Jest/Enzyme tests + build + export into a static app.
+- [musing-joliot-fef599.netlify.com](https://musing-joliot-fef599.netlify.com/) - Jest/Enzyme tests with [coverage](https://musing-joliot-fef599.netlify.com/static/coverage/lcov-report/index.html) + build + export into a static app.
 
 ## Musings
 
