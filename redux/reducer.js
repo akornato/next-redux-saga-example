@@ -9,7 +9,7 @@ export const initialState = {
     error: null,
   },
   repoDetails: { details: null, loading: false, error: null },
-  repoContributors: { contributors: null, loading: false, error: null },
+  repoContributors: { contributors: [], loading: false, error: null },
 };
 
 const repoListReducer = (state = initialState.repoList, action) => {

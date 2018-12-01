@@ -16,7 +16,7 @@ export class RepoContributors extends React.Component {
       return <p>{error.message}</p>;
     }
     return (
-      contributors && (
+      contributors.length > 0 && (
         <Fragment>
           <div className="text-center text-xl md:text-3xl my-10">Contributors</div>
           <List
