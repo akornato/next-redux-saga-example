@@ -1,7 +1,4 @@
 import { RSAA } from 'redux-api-middleware';
-// import getConfig from 'next/config';
-
-// const { publicRuntimeConfig } = getConfig();
 
 export const actionTypes = {
   FETCH_REPO_LIST_PAGE_START: 'FETCH_REPO_LIST_PAGE_START',
@@ -22,7 +19,7 @@ export function fetchRepoListPage(after = '') {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        // github graphql API requires auth so hardcoded the token
+        // github graphql API requires some auth
         // in a 'real' app we'd obviously need to add proper auth instead
         Authorization: 'Bearer 23d380f73d94740763afbf2ddda955cca409f199',
       },

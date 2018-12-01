@@ -2,26 +2,10 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 
 import { RepoList, mapStateToProps } from './RepoList';
+import { repoListMock } from '../mocks';
 import { fetchRepoListPage, fetchRepoDetails, fetchRepoContributors } from '../redux/actions';
 
-const repoListMock = [
-  {
-    name: 'react',
-    description: 'library',
-    stargazers: {
-      totalCount: 116716,
-    },
-  },
-  {
-    name: 'react-native',
-    description: 'library',
-    stargazers: {
-      totalCount: 71460,
-    },
-  },
-];
-
-describe('RepoList loading', () => {
+describe('loading state', () => {
   const dispatch = jest.fn();
   const wrapper = mount(<RepoList dispatch={dispatch} list={[]} loading={true} />);
 
@@ -35,7 +19,7 @@ describe('RepoList loading', () => {
   });
 });
 
-describe('RepoList with error', () => {
+describe('error state', () => {
   const dispatch = jest.fn();
   const wrapper = shallow(
     <RepoList dispatch={dispatch} list={[]} loading={false} error={{ message: 'Error!' }} />
@@ -46,7 +30,7 @@ describe('RepoList with error', () => {
   });
 });
 
-describe('RepoList with data', () => {
+describe('regular state', () => {
   const dispatch = jest.fn();
   const wrapper = mount(<RepoList dispatch={dispatch} loading={false} list={repoListMock} />);
 
@@ -77,7 +61,7 @@ describe('RepoList with data', () => {
   });
 });
 
-describe('RepoList mapStateToProps', () => {
+describe('mapStateToProps', () => {
   it('should select repoList', () => {
     const state = { repoList: repoListMock };
     expect(mapStateToProps(state)).toEqual(repoListMock);

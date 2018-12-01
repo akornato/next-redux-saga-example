@@ -2,13 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 
 import { RepoContributors, mapStateToProps } from './RepoContributors';
-
-const repoContributorsMock = [
-  {
-    login: 'akornato',
-    html_url: 'https://github.com/akornato',
-  },
-];
+import { repoContributorsMock } from '../mocks';
 
 describe('loading state', () => {
   const dispatch = jest.fn();

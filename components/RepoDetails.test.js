@@ -2,17 +2,9 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 
 import { RepoDetails, getTree, mapStateToProps } from './RepoDetails';
+import { repoDetailsMock } from '../mocks';
 
-const repoDetailsMock = {
-  name: 'react',
-  description: 'library',
-  somenullfield: null,
-  owner: {
-    html_url: 'https://github.com/facebook',
-  },
-};
-
-describe('RepoDetails loading', () => {
+describe('loading state', () => {
   const dispatch = jest.fn();
   const wrapper = shallow(<RepoDetails dispatch={dispatch} list={[]} loading={true} />);
 
@@ -21,7 +13,7 @@ describe('RepoDetails loading', () => {
   });
 });
 
-describe('RepoDetails with error', () => {
+describe('error state', () => {
   const dispatch = jest.fn();
   const wrapper = shallow(
     <RepoDetails dispatch={dispatch} list={[]} loading={false} error={{ message: 'Error!' }} />
@@ -32,7 +24,7 @@ describe('RepoDetails with error', () => {
   });
 });
 
-describe('RepoDetails with data', () => {
+describe('regular state', () => {
   const dispatch = jest.fn();
   const wrapper = mount(
     <RepoDetails dispatch={dispatch} loading={false} details={repoDetailsMock} />
@@ -43,7 +35,7 @@ describe('RepoDetails with data', () => {
   });
 });
 
-describe('RepoDetails getTree', () => {
+describe('getTree', () => {
   it('should convert object into a tree', () => {
     expect(getTree(repoDetailsMock)).toEqual([
       { key: 'name', field: 'name', value: 'react' },
@@ -64,7 +56,7 @@ describe('RepoDetails getTree', () => {
   });
 });
 
-describe('RepoDetails mapStateToProps', () => {
+describe('mapStateToProps', () => {
   it('should select repoDetails', () => {
     const state = { repoDetails: repoDetailsMock };
     expect(mapStateToProps(state)).toEqual(repoDetailsMock);
