@@ -1,4 +1,4 @@
-# next-redux-saga-example
+# next-redux-saga-example [![CircleCI](https://circleci.com/gh/akornato/next-redux-saga-example.svg?style=svg)](https://circleci.com/gh/akornato/next-redux-saga-example)
 
 Facebook GitHub repo viewer. The app has a sidebar navigation with repos sorted by stargazers. Clicking on one of them fetches that repo data and populates the main view with its details and a list of project contributors.
 
