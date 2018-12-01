@@ -4,7 +4,7 @@ Facebook GitHub repo viewer. The app has a sidebar navigation with repos sorted 
 
 ## CI/CD
 
-- [Netlify](https://musing-joliot-fef599.netlify.com/) - Jest/Enzyme tests + build + export into a static app.
+- [musing-joliot-fef599.netlify.com](https://musing-joliot-fef599.netlify.com/) - Jest/Enzyme tests + build + export into a static app.
 
 ## Musings
 
@@ -21,8 +21,8 @@ Eventually I'm using GraphQL only to get the sidebar repo list so I can select o
 - [Redux](https://redux.js.org/) - Predictable state container for JavaScript apps.
 - [redux-saga](https://github.com/redux-saga/redux-saga) - An alternative side effect model for Redux apps.
 - [redux-api-middleware](https://github.com/agraboso/redux-api-middleware) - Redux middleware for calling an API.
-- [Tailwind CSS](https://tailwindcss.com/) - A Utility-First CSS Framework.
-- [Ant Design](https://ant.design/) - A design system with values of Nature and Determinacy for better user experience of enterprise applications.
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-First CSS Framework.
+- [Ant Design of React](https://ant.design/docs/react/introduce) - React UI library.
 
 ## Requirements
 
@@ -36,8 +36,6 @@ Eventually I'm using GraphQL only to get the sidebar repo list so I can select o
 ```
 
 ## Test
-
-Runs Jest with coverage report
 
 ```bash
   npm test
