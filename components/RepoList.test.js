@@ -1,11 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
-import { RepoList } from './RepoList';
-import { mapStateToProps } from './RepoList';
+import { RepoList, mapStateToProps } from './RepoList';
 import { fetchRepoListPage, fetchRepoDetails, fetchRepoContributors } from '../redux/actions';
 
-const testRepoList = [
+const repoListMock = [
   {
     name: 'react',
     description: 'library',
@@ -22,7 +21,7 @@ const testRepoList = [
   },
 ];
 
-describe('container loading', () => {
+describe('RepoList loading', () => {
   const dispatch = jest.fn();
   const wrapper = mount(<RepoList dispatch={dispatch} list={[]} loading={true} />);
 
@@ -36,9 +35,9 @@ describe('container loading', () => {
   });
 });
 
-describe('container with error', () => {
+describe('RepoList with error', () => {
   const dispatch = jest.fn();
-  const wrapper = mount(
+  const wrapper = shallow(
     <RepoList dispatch={dispatch} list={[]} loading={false} error={{ message: 'Error!' }} />
   );
 
@@ -47,11 +46,11 @@ describe('container with error', () => {
   });
 });
 
-describe('container w/o error', () => {
+describe('RepoList with data', () => {
   const dispatch = jest.fn();
-  const wrapper = mount(<RepoList dispatch={dispatch} loading={false} list={testRepoList} />);
+  const wrapper = mount(<RepoList dispatch={dispatch} loading={false} list={repoListMock} />);
 
-  it('should call dispatch(fetchRepoListPage()) on componentDidMount', () => {
+  it('should call fetchRepoListPage on componentDidMount', () => {
     expect(dispatch).toBeCalledWith(fetchRepoListPage());
   });
 
@@ -70,7 +69,7 @@ describe('container w/o error', () => {
     ).toHaveProperty('text', 116716);
   });
 
-  it('should call dispatch(fetchRepoDetails()) and dispatch(fetchRepoContributors()) on repo click', () => {
+  it('should call fetchRepoDetails and etchRepoContributors on repo click', () => {
     const listItem = wrapper.find('Item');
     listItem.first().simulate('click');
     expect(dispatch).toBeCalledWith(fetchRepoDetails('react'));
@@ -78,9 +77,9 @@ describe('container w/o error', () => {
   });
 });
 
-describe('mapStateToProps', () => {
+describe('RepoList mapStateToProps', () => {
   it('should select repoList', () => {
-    const state = { repoList: testRepoList };
-    expect(mapStateToProps(state)).toEqual(testRepoList);
+    const state = { repoList: repoListMock };
+    expect(mapStateToProps(state)).toEqual(repoListMock);
   });
 });

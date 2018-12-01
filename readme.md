@@ -37,6 +37,8 @@ Eventually I'm using GraphQL only to get the sidebar repo list so I can select o
 
 ## Test
 
+Runs Jest with coverage report
+
 ```bash
   npm test
 ```

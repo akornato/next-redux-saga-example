@@ -22,6 +22,8 @@ export function fetchRepoListPage(after = '') {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
+        // github graphql API requires auth so hardcoded the token
+        // in a 'real' app we'd obviously need to add proper auth instead
         Authorization: 'Bearer 23d380f73d94740763afbf2ddda955cca409f199',
       },
       method: 'POST',

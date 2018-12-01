@@ -15,31 +15,33 @@ export class RepoContributors extends React.Component {
     if (error) {
       return <p>{error.message}</p>;
     }
-    return contributors ? (
-      <Fragment>
-        <div className="text-center text-xl md:text-3xl my-10">Contributors</div>
-        <List
-          grid={{ gutter: 16, xs: 1, md: 2, lg: 3, xl: 4 }}
-          dataSource={Object.values(contributors)}
-          renderItem={item => (
-            <List.Item>
-              <List.Item.Meta
-                avatar={<Avatar src={item.avatar_url} />}
-                title={item.login}
-                description={
-                  <a href={item.html_url} target="_blank" rel="noopener noreferrer">
-                    {item.html_url}
-                  </a>
-                }
-              />
-            </List.Item>
-          )}
-        />
-      </Fragment>
-    ) : null;
+    return (
+      contributors && (
+        <Fragment>
+          <div className="text-center text-xl md:text-3xl my-10">Contributors</div>
+          <List
+            grid={{ gutter: 16, xs: 1, md: 2, lg: 3, xl: 4 }}
+            dataSource={Object.values(contributors)}
+            renderItem={item => (
+              <List.Item>
+                <List.Item.Meta
+                  avatar={<Avatar src={item.avatar_url} />}
+                  title={item.login}
+                  description={
+                    <a href={item.html_url} target="_blank" rel="noopener noreferrer">
+                      {item.html_url}
+                    </a>
+                  }
+                />
+              </List.Item>
+            )}
+          />
+        </Fragment>
+      )
+    );
   }
 }
 
-const mapStateToProps = state => state.repoContributors;
+export const mapStateToProps = state => state.repoContributors;
 
 export default connect(mapStateToProps)(RepoContributors);
