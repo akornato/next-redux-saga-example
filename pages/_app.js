@@ -3,7 +3,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
 
-import '../static/css/vendor/tailwind.css'; // PurifyCSS-ed in next.config.js
+import '../styles/index.css';
 
 export default class AppWithRedux extends App {
   render() {
