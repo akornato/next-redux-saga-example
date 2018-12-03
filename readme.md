@@ -37,6 +37,8 @@ Create .env with your [GITHUB_GRAPHQL_API_TOKEN](https://help.github.com/article
   npm run dev
 ```
 
+Warning: OK so the token is not in git but it's still included in the client build, so in a 'real' app we'd either implement client auth or proxy the api.
+
 ## Test
 
 ```bash
