@@ -28,7 +28,9 @@ Eventually I'm using GraphQL only to get the sidebar repo list so I can select o
 
 [Node.js](https://nodejs.org/en/)
 
-## Getting started
+## Dev
+
+Create .env with your [GITHUB_GRAPHQL_API_TOKEN](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) and then:
 
 ```bash
   npm install
