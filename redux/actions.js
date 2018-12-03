@@ -1,4 +1,6 @@
 import { RSAA } from 'redux-api-middleware';
+import getConfig from 'next/config';
+const { publicRuntimeConfig } = getConfig();
 
 export const actionTypes = {
   FETCH_REPO_LIST_PAGE_START: 'FETCH_REPO_LIST_PAGE_START',
@@ -19,9 +21,9 @@ export function fetchRepoListPage(after = '') {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        // github graphql API requires some auth
-        // in a 'real' app we'd obviously need to add proper auth instead
-        Authorization: 'Bearer 23d380f73d94740763afbf2ddda955cca409f199',
+        // the token is not in git but it's still included in the client build
+        // so in a 'real' app we'd either implement client auth or proxy the api
+        Authorization: `Bearer ${publicRuntimeConfig.GITHUB_GRAPHQL_API_TOKEN}`,
       },
       method: 'POST',
       body: JSON.stringify({
