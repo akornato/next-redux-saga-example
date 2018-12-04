@@ -1,6 +1,4 @@
 import { RSAA } from 'redux-api-middleware';
-import getConfig from 'next/config';
-const { publicRuntimeConfig } = getConfig();
 
 export const actionTypes = {
   FETCH_REPO_LIST_PAGE_START: 'FETCH_REPO_LIST_PAGE_START',
@@ -17,13 +15,10 @@ export const actionTypes = {
 export function fetchRepoListPage(after = '') {
   return {
     [RSAA]: {
-      endpoint: 'https://api.github.com/graphql',
+      endpoint: '/.netlify/functions/fetchRepoListPage',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        // the token is not in git but it's still included in the client build
-        // so in a 'real' app we'd either implement client auth or proxy the api
-        Authorization: `Bearer ${publicRuntimeConfig.GITHUB_GRAPHQL_API_TOKEN}`,
       },
       method: 'POST',
       body: JSON.stringify({
