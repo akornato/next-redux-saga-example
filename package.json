@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "test": "jest --coverage",
-    "build": "next build",
+    "build": "next build && netlify-lambda build lambda",
     "export": "next export",
     "deploy": "npm test && npm run build && npm run export"
   },
@@ -20,6 +20,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "jest": "^23.6.0",
     "jest-fetch-mock": "^2.0.1",
+    "netlify-lambda": "^1.1.0",
     "next": "7.0.2",
     "postcss-easy-import": "^3.0.0",
     "react": "16.6.3",
