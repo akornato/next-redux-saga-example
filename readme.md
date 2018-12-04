@@ -13,7 +13,7 @@ I tried to use the new [GitHub GraphQL API](https://developer.github.com/v4/) bu
 - [list-org-repos-ordered-by-stargazers-not-working](https://platform.github.community/t/list-org-repos-ordered-by-stargazers-not-working/7505): falling back to client side sorting for now.
 - [contributors-of-a-repository](https://platform.github.community/t/contributors-of-a-repository/3680/11): no other choice but to use [GitHub REST API](https://developer.github.com/v3/) to get repo contributors for now.
 
-Eventually I'm using GraphQL only to get the sidebar repo list so I can select only the few fields I need there. However GitHub imposes a limit of 100 repos with a single GraphQL query so I'm using a little redux saga to get them all via paging.
+Eventually I'm using GraphQL only to get the sidebar repo list so I can select only the few fields I need there. Since GitHub GraphQL API imposes a limit of 100 repos with a single query I'm using a little redux saga to get them all via paging. The API also requires authentication so I'm proxying the API call via a Netlify Function (AWS Lambda) to avoid including GITHUB_GRAPHQL_API_TOKEN in the web client build.
 
 ## Built with
 
@@ -36,8 +36,6 @@ Create .env with your [GITHUB_GRAPHQL_API_TOKEN](https://help.github.com/article
   npm install
   npm run dev
 ```
-
-Warning: OK so the token is not in git but it's still included in the client build, so in a 'real' app we'd either implement client auth or proxy the api.
 
 ## Test
 
