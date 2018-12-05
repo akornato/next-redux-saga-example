@@ -13,7 +13,7 @@ I tried to use the new [GitHub GraphQL API](https://developer.github.com/v4/) bu
 - [list-org-repos-ordered-by-stargazers-not-working](https://platform.github.community/t/list-org-repos-ordered-by-stargazers-not-working/7505): falling back to client side sorting for now.
 - [contributors-of-a-repository](https://platform.github.community/t/contributors-of-a-repository/3680/11): no other choice but to use [GitHub REST API](https://developer.github.com/v3/) to get repo contributors for now.
 
-Eventually I'm using GraphQL only to get the sidebar repo list so I can select only the few fields I need there. Since GitHub GraphQL API imposes a limit of 100 repos with a single query I'm using a little redux saga to get them all via paging. The API also requires authentication so I'm proxying the API call via a Netlify Function (AWS Lambda) to avoid including GITHUB_GRAPHQL_API_TOKEN in the web client build.
+Hence I'm using GraphQL only to get the sidebar repo list to select only the few fields I need there. Since GitHub GraphQL API imposes a limit of 100 repos with a single query, I'm using a little redux saga to get them all via paging. The API also requires authentication so I'm proxying the API call via a Netlify function to avoid including GITHUB_GRAPHQL_API_TOKEN in the web client build.
 
 ## Built with
 
@@ -23,6 +23,7 @@ Eventually I'm using GraphQL only to get the sidebar repo list so I can select o
 - [redux-api-middleware](https://github.com/agraboso/redux-api-middleware) - Redux middleware for calling an API.
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-First CSS Framework.
 - [Ant Design of React](https://ant.design/docs/react/introduce) - React UI library.
+- [Netlify Functions](https://www.netlify.com/docs/functions/) - AWS Lambda based functions.
 
 ## Requirements
 
