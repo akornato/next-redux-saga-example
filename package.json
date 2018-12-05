@@ -4,7 +4,7 @@
   "license": "MIT",
   "repository": "github:akornato/next-redux-saga-example",
   "scripts": {
-    "dev": "next",
+    "dev": "concurrently -n web,lambda \"node dev.server.js\" \"netlify-lambda serve lambda\"",
     "test": "jest --coverage",
     "build": "next build && netlify-lambda build lambda",
     "export": "next export",
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
+    "concurrently": "^4.1.0",
     "eslint": "^5.9.0",
     "eslint-config-react-app": "^3.0.5",
     "eslint-plugin-flowtype": "^3.2.0",
@@ -44,6 +45,8 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
+    "express": "^4.16.4",
+    "http-proxy-middleware": "^0.19.1",
     "prettier": "^1.15.2"
   }
 }

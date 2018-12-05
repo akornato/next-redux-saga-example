@@ -37,6 +37,8 @@ Create .env with your [GITHUB_GRAPHQL_API_TOKEN](https://help.github.com/article
   npm run dev
 ```
 
+This will start the app at http://localhost:3000/ and lambda at http://localhost:9000/
+
 ## Test
 
 ```bash
