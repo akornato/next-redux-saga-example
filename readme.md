@@ -13,7 +13,7 @@ I tried to use the new [GitHub GraphQL API](https://developer.github.com/v4/) bu
 - [list-org-repos-ordered-by-stargazers-not-working](https://platform.github.community/t/list-org-repos-ordered-by-stargazers-not-working/7505): falling back to client side sorting for now.
 - [contributors-of-a-repository](https://platform.github.community/t/contributors-of-a-repository/3680/11): no other choice but to use [GitHub REST API](https://developer.github.com/v3/) to get repo contributors for now.
 
-Hence I'm using GraphQL only to get the sidebar repo list to select only the few fields I need there. Since GitHub GraphQL API imposes a limit of 100 repos with a single query, I'm using a little redux saga to get them all via paging. The API also requires authentication so I'm proxying the API call via a Netlify function to avoid including GITHUB_GRAPHQL_API_TOKEN in the web client build.
+Hence I'm using GraphQL only to get the sidebar repo list to select only the few fields I need there. Since GitHub GraphQL API imposes a limit of 100 repos with a single query, I'm using a little redux saga to get them all via paging. The API also requires authentication so I'm proxying the API call via a Netlify function to avoid including GitHub API token in the web client build.
 
 ## Built with
 
@@ -38,7 +38,7 @@ Create .env with your [GITHUB_GRAPHQL_API_TOKEN](https://help.github.com/article
   npm run dev
 ```
 
-This will start the app at http://localhost:3000/ and lambda at http://localhost:9000/
+This will start the app at http://localhost:3000/ and serve the lambda at http://localhost:9000/. The dev server uses [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) so the lambda is simply available at /.netlify/functions, same as in prod. 
 
 ## Test
 
