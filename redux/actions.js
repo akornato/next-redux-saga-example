@@ -43,9 +43,9 @@ export function fetchRepoListPage(after = '') {
           }`,
       }),
       types: [
-        'FETCH_REPO_LIST_PAGE_START',
-        'FETCH_REPO_LIST_PAGE_SUCCESS',
-        'FETCH_REPO_LIST_PAGE_ERROR',
+        actionTypes.FETCH_REPO_LIST_PAGE_START,
+        actionTypes.FETCH_REPO_LIST_PAGE_SUCCESS,
+        actionTypes.FETCH_REPO_LIST_PAGE_ERROR,
       ],
     },
   };
@@ -61,7 +61,11 @@ export function fetchRepoDetails(repo) {
         'Content-Type': 'application/json',
       },
       method: 'GET',
-      types: ['FETCH_REPO_DETAILS_START', 'FETCH_REPO_DETAILS_SUCCESS', 'FETCH_REPO_DETAILS_ERROR'],
+      types: [
+        actionTypes.FETCH_REPO_DETAILS_START,
+        actionTypes.FETCH_REPO_DETAILS_SUCCESS,
+        actionTypes.FETCH_REPO_DETAILS_ERROR,
+      ],
     },
   };
 }
@@ -78,9 +82,9 @@ export function fetchRepoContributors(repo) {
       },
       method: 'GET',
       types: [
-        'FETCH_REPO_CONTRIBUTORS_START',
-        'FETCH_REPO_CONTRIBUTORS_SUCCESS',
-        'FETCH_REPO_CONTRIBUTORS_ERROR',
+        actionTypes.FETCH_REPO_CONTRIBUTORS_START,
+        actionTypes.FETCH_REPO_CONTRIBUTORS_SUCCESS,
+        actionTypes.FETCH_REPO_CONTRIBUTORS_ERROR,
       ],
     },
   };
