@@ -38,7 +38,7 @@ Create .env with your [GITHUB_GRAPHQL_API_TOKEN](https://help.github.com/article
   npm run dev
 ```
 
-This will start the app at http://localhost:3000/ and serve the lambda at http://localhost:9000/. The dev server uses [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) so the lambda is simply available at /.netlify/functions, same as in prod. 
+This will start the app at http://localhost:4000/ and serve the lambda at http://localhost:9000/. The dev server uses [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) so the lambda is simply available at /.netlify/functions, same as in prod. 
 
 ## Test
 
