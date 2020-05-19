@@ -12,7 +12,7 @@ export const actionTypes = {
   FETCH_REPO_CONTRIBUTORS_ERROR: 'FETCH_REPO_CONTRIBUTORS_ERROR',
 };
 
-export function fetchRepoListPage(after = '') {
+export function fetchRepoListPage(after = null) {
   return {
     [RSAA]: {
       endpoint: '/.netlify/functions/fetchRepoListPage',
