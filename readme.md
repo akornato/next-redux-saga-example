@@ -4,7 +4,7 @@ Facebook GitHub repo viewer. The app has a sidebar navigation with repos sorted 
 
 ## CI/CD
 
-- [musing-joliot-fef599.netlify.com](https://musing-joliot-fef599.netlify.com/) - Jest/Enzyme tests with [coverage](https://musing-joliot-fef599.netlify.com/static/coverage/lcov-report/index.html) + build + export into a static app + deploy on Netlify & AWS Lambda via Netlify Functions.
+- [musing-joliot-fef599.netlify.app](https://musing-joliot-fef599.netlify.app/) - Jest/Enzyme tests with [coverage](https://musing-joliot-fef599.netlify.app/static/coverage/lcov-report/index.html) + build + export into a static app + deploy on Netlify & AWS Lambda via Netlify Functions.
 
 ## Musings
 
@@ -38,7 +38,7 @@ Create .env with your [GITHUB_GRAPHQL_API_TOKEN](https://help.github.com/article
   npm run dev
 ```
 
-This will start the app at http://localhost:4000/ and serve the lambda at http://localhost:9000/. The dev server uses [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) so the lambda is simply available at /.netlify/functions, same as in prod. 
+This will start the app at http://localhost:4000/ and serve the lambda at http://localhost:9000/. The dev server uses [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) so the lambda is simply available at /.netlify/functions, same as in prod.
 
 ## Test
 
