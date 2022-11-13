@@ -23,7 +23,7 @@
     "jest": "^24.7.1",
     "jest-fetch-mock": "^2.1.2",
     "netlify-lambda": "^1.4.3",
-    "next": "^8.0.4",
+    "next": "^13.0.3",
     "postcss-easy-import": "^3.0.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
